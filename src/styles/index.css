@@ -7,3 +7,9 @@
 html, body {
   height: 100%;
 }
+
+
+@font-face {
+  font-family: "AGFatumC";
+  src: url("/assets/fonts/agfatumc.ttf");
+}

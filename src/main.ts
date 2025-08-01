@@ -1,13 +1,11 @@
-import { Application } from "pixi.js";
+import { GameApplication } from "./core/game-application";
+import { MainMenuScene } from "./scenes/main-menu";
 
 
 (async () => {
-  const app = new Application();
+  const app = new GameApplication();
+  await app.init();
 
-  await app.init({ resizeTo: window });
-  app.canvas.style.position = "absolute";
-  app.canvas.style.height = "100%";
-  app.canvas.style.width = "100%";
-
-  document.body.appendChild(app.canvas);
+  const mainMenuScene = new MainMenuScene(app);
+  app.setScene(mainMenuScene);
 })();
